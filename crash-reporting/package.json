@@ -17,7 +17,7 @@
   "trustedDependencies": [
     "@shopify/plugin-cloudflare"
   ],
-  "author": "Jasen",
+  "author": "Raygun",
   "private": true,
   "workspaces": [
     "extensions/*"
