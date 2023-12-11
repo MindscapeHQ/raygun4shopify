@@ -6,14 +6,13 @@
   e:g})}}(window,document,"script","//cdn.raygun.io/raygun4js/raygun.min.js","rg4js");
 
   rg4js('apiKey', '{{ block.settings.raygun-api-key }}');
-  rg4js('enableRUM', {{ block.settings.raygun-crash-reporting-enabled }});
+  rg4js('enableRUM', {{ block.settings.raygun-real-user-monitoring-enabled }});
 </script>
 
 {% schema %}
 {
-  "name": "Raygun Crash Reporting",
+  "name": "Raygun RUM",
   "target": "head",
-  "javascript": "crash-reporting.js",
   "settings": [
   {
     "type": "text",
