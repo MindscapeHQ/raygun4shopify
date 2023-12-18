@@ -2,7 +2,7 @@
 
 name = "Raygun Crash Reporting"
 client_id = "242392a59ff87b609c4027eee44772c7"
-application_url = "https://shopify.dev/apps/default-app-home"
+application_url = "https://marketplace.raygun.com/external/shopify/connect/crashreporting"
 embedded = false
 
 [access_scopes]
@@ -10,10 +10,17 @@ embedded = false
 scopes = ""
 
 [auth]
-redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+redirect_urls = [
+  "https://marketplace.raygun.com/external/shopify/redirect/crashreporting"
+]
 
 [webhooks]
 api_version = "2023-10"
+
+  [webhooks.privacy_compliance]
+  customer_deletion_url = "https://app.raygun.com"
+  customer_data_request_url = "https://app.raygun.com"
+  shop_deletion_url = "https://app.raygun.com"
 
 [pos]
 embedded = false
