@@ -18,9 +18,9 @@ redirect_urls = [
 api_version = "2023-10"
 
   [webhooks.privacy_compliance]
-  customer_deletion_url = "https://app.raygun.com"
-  customer_data_request_url = "https://app.raygun.com"
-  shop_deletion_url = "https://app.raygun.com"
+  customer_deletion_url = "https://marketplace.raygun.com/shopify/webhook/crashreporting/customer/redact"
+  customer_data_request_url = "https://marketplace.raygun.com/shopify/webhook/crashreporting/customer"
+  shop_deletion_url = "https://marketplace.raygun.com/shopify/webhook/crashreporting/shop/redact"
 
 [pos]
 embedded = false
