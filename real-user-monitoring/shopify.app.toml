@@ -1,6 +1,6 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-name = "Raygun RUM"
+name = "Raygun Real User Monitoring"
 client_id = "641c4c653030ad1ca22a93c05d957568"
 application_url = "https://marketplace.raygun.com/external/shopify/connect/rum"
 embedded = false
