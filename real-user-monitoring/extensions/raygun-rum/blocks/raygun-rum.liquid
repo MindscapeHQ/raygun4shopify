@@ -8,7 +8,7 @@
   {% if block.settings.raygun-api-key != blank %}
     rg4js('apiKey', '{{ block.settings.raygun-api-key }}');
   {% else %}
-    rg4js('apiKey', '{{ shop.metafields.raygun.rum.apikey }}');
+    rg4js('apiKey', '{{ shop.metafields.raygun.apikey }}');
   {% endif %}
 
   rg4js('enableRUM', {{ block.settings.raygun-real-user-monitoring-enabled }});
