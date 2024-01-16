@@ -5,7 +5,12 @@
   h&&h(b,c,d,f,g),g||(g=new Error(b)),a[e].q=a[e].q||[],a[e].q.push({
   e:g})}}(window,document,"script","//cdn.raygun.io/raygun4js/raygun.min.js","rg4js");
 
-  rg4js('apiKey', '{{ block.settings.raygun-api-key }}'); 
+  {% if block.settings.raygun-api-key != blank %}
+    rg4js('apiKey', '{{ block.settings.raygun-api-key }}');
+  {% else %}
+    rg4js('apiKey', '{{ shop.metafields.raygun.apikey }}');
+  {% endif %}
+ 
   rg4js('enableCrashReporting', {{ block.settings.raygun-crash-reporting-enabled }});
 </script>
 
@@ -18,7 +23,8 @@
   {
     "type": "text",
     "id": "raygun-api-key",
-    "label": "Api Key"
+    "label": "API Key",
+    "info": "Optional: Set an API key to override which Raygun Application data is sent to."
   },
   {
     "type": "checkbox",
