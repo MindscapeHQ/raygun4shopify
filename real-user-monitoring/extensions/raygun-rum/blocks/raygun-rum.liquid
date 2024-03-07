@@ -13,7 +13,9 @@
   {% endif %}
   }
 
-  rg4js('enableRUM', {{ block.settings.raygun-real-user-monitoring-enabled }});
+  {% unless request.design_mode %}
+    rg4js('enableRUM', true);
+  {% endunless %}
 </script>
 
 {% schema %}

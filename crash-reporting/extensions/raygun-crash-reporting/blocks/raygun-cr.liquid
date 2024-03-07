@@ -12,8 +12,10 @@
     rg4js('apiKey', '{{ shop.metafields.raygun.apikey }}');
   {% endif %}
   }
- 
-  rg4js('enableCrashReporting', {{ block.settings.raygun-crash-reporting-enabled }});
+
+  {% unless request.design_mode %}
+    rg4js('enableCrashReporting', true);
+  {% endunless %}
 </script>
 
 {% schema %}
