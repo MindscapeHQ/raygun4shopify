@@ -13,6 +13,10 @@
   {% endif %}
   }
 
+  rg4js('options', {
+    ignore3rdPartyErrors: true
+  });
+
   {% unless request.design_mode %}
     rg4js('enableCrashReporting', true);
   {% endunless %}
