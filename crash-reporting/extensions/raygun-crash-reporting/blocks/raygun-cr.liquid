@@ -12,8 +12,14 @@
     rg4js('apiKey', '{{ shop.metafields.raygun.apikey }}');
   {% endif %}
   }
- 
-  rg4js('enableCrashReporting', {{ block.settings.raygun-crash-reporting-enabled }});
+
+  rg4js('options', {
+    ignore3rdPartyErrors: true
+  });
+
+  {% unless request.design_mode %}
+    rg4js('enableCrashReporting', true);
+  {% endunless %}
 </script>
 
 {% schema %}
@@ -26,12 +32,6 @@
     "id": "raygun-api-key",
     "label": "API Key",
     "info": "Optional: Set an API key to override which Raygun Application data is sent to."
-  },
-  {
-    "type": "checkbox",
-    "id": "raygun-crash-reporting-enabled",
-    "label": "Enable Crash Reporting",
-    "default": true
   }
   ]
 }

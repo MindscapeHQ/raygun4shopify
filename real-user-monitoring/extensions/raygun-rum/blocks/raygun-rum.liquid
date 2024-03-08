@@ -13,7 +13,9 @@
   {% endif %}
   }
 
-  rg4js('enableRUM', {{ block.settings.raygun-real-user-monitoring-enabled }});
+  {% unless request.design_mode %}
+    rg4js('enableRUM', true);
+  {% endunless %}
 </script>
 
 {% schema %}
@@ -26,12 +28,6 @@
     "id": "raygun-api-key",
     "label": "API Key",
     "info": "Optional: Set an API key to override which Raygun Application data is sent to."
-  },
-  {
-    "type": "checkbox",
-    "id": "raygun-real-user-monitoring-enabled",
-    "label": "Enable Real User Monitoring",
-    "default": true
   }
   ]
 }
