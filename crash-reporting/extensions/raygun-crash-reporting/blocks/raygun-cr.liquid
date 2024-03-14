@@ -14,7 +14,7 @@
   }
 
   rg4js('options', {
-    ignore3rdPartyErrors: true
+    ignore3rdPartyErrors: {{ block.settings.ignore-third-party-errors }}
   });
 
   {% unless request.design_mode %}
@@ -27,12 +27,19 @@
   "name": "Crash Reporting",
   "target": "head",
   "settings": [
-  {
-    "type": "text",
-    "id": "raygun-api-key",
-    "label": "API Key",
-    "info": "Optional: Set an API key to override which Raygun Application data is sent to."
-  }
+    {
+      "type": "text",
+      "id": "raygun-api-key",
+      "label": "API Key",
+      "info": "Optional: Set an API key to override which Raygun Application data is sent to."
+    },
+    {
+      "type": "checkbox",
+      "id": "ignore-third-party-errors",
+      "label": "Ignore Third-Party Errors",
+      "info": "Recommended - [Learn more](https://raygun.com/documentation/language-guides/javascript/advanced-setup/#ignoring-third-party-errors)",
+      "default": true
+    }
   ]
 }
 {% endschema %}
